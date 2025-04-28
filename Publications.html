@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. Valentin NKUBA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a3a7e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .title h1 {
+            color: #1a3a7e;
+            font-size: 22px;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        
+        .title p {
+            color: #6c757d;
+            font-size: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #495057;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            color: #1a3a7e;
+        }
+        
+        .nav-links a.active {
+            color: #dc3545;
+            font-weight: 500;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .language {
+            color: #495057;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+        
+        .main-nav {
+            background-color: #1a3a7e;
+            padding: 15px 40px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .main-nav a.active {
+            color: #dc3545;
+            font-weight: 500;
+        }
+        
+        .red-divider {
+            width: 100%;
+            height: 5px;
+            background-color: #dc3545;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .content-main {
+            flex: 3;
+        }
+        
+        .content-sidebar {
+            flex: 1;
+        }
+        
+        .page-header {
+            margin-bottom: 40px;
+        }
+        
+        .page-title {
+            color: #1a3a7e;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .page-description {
+            color: #495057;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+        
+        .section-title {
+            color: #1a3a7e;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dc3545;
+        }
+        
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .publication-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .publication-icon {
+            font-size: 28px;
+            color: #1a3a7e;
+            min-width: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .publication-details h3 {
+            color: #1a3a7e;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .publication-meta {
+            display: flex;
+            gap: 15px;
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .publication-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .publication-abstract {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .publication-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        
+        .publication-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .pub-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .view-button {
+            background-color: #1a3a7e;
+            color: white;
+        }
+        
+        .view-button:hover {
+            background-color: #152d62;
+        }
+        
+        .cite-button {
+            background-color: #f8f9fa;
+            color: #1a3a7e;
+            border: 1px solid #dee2e6;
+        }
+        
+        .cite-button:hover {
+            background-color: #e9ecef;
+        }
+        
+        .filter-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-title {
+            color: #1a3a7e;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .filter-label {
+            display: block;
+            color: #495057;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .filter-select, .filter-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            color: #495057;
+            font-size: 14px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .filter-button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .apply-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .apply-button:hover {
+            background-color: #c82333;
+        }
+        
+        .reset-button {
+            background-color: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+        }
+        
+        .reset-button:hover {
+            background-color: #e9ecef;
+        }
+        
+        .citation-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .citation-title {
+            color: #1a3a7e;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .citation-text {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            color: #495057;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            white-space: pre-line;
+        }
+        
+        .copy-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .copy-button:hover {
+            background-color: #e9ecef;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 30px;
+        }
+        
+        .page-item {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .page-item:hover {
+            background-color: #e9ecef;
+        }
+        
+        .page-item.active {
+            background-color: #1a3a7e;
+            color: white;
+        }
+        
+        .sidebar-posts {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            color: #1a3a7e;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dc3545;
+        }
+        
+        .publication-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a3a7e;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6c757d;
+        }
+        
+        .post-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .post-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .post-title {
+            color: #1a3a7e;
+            margin-bottom: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .post-title:hover {
+            color: #dc3545;
+        }
+        
+        .post-date {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .publication-item {
+                flex-direction: column;
+            }
+            
+            .publication-icon {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .logo-container {
+                margin-bottom: 20px;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .publication-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .publication-actions {
+                flex-direction: column;
+            }
+            
+            .publication-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">VN</div>
+            <div class="title">
+                <h1>Dr. Valentin NKUBA</h1>
+                <p>MD, MPH</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">
+                <span class="nav-icon">📄</span>
+                Publications
+            </a>
+            <a href="#">
+                <span class="nav-icon">📚</span>
+                Books
+            </a>
+            <a href="#">
+                <span class="nav-icon">👤</span>
+                About
+            </a>
+            <span class="language">FR | EN</span>
+        </div>
+    </header>
+    
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Medical Research</a></li>
+            <li><a href="#">Public Health</a></li>
+            <li><a href="#">Academic Papers</a></li>
+            <li><a href="#" class="active">Books & Publications</a></li>
+            <li><a href="#">Conferences</a></li>
+        </ul>
+    </nav>
+    
+    <div class="red-divider"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-main">
+            <div class="page-header">
+                <h1 class="page-title">Academic Publications</h1>
+                <p class="page-description">Browse Dr. Valentin NKUBA's comprehensive collection of peer-reviewed articles, research papers, and academic publications in the fields of medicine and public health.</p>
+            </div>
+            
+            <!-- Publications List Section -->
+            <section class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-icon">📝</div>
+                    <div class="publication-details">
+                        <h3>Impact of COVID-19 on Public Health Systems in African Sub-Saharan Countries: A Longitudinal Study</h3>
+                        <div class="publication-meta">
+                            <span>📅 March 2024</span>
+                            <span>🏛️ Journal of Global Health</span>
+                            <span>📊 Citations: 12</span>
+                        </div>
+                        <p class="publication-abstract">This comprehensive study examines the long-term impacts of the COVID-19 pandemic on healthcare infrastructure, resource allocation, and health outcomes across sub-Saharan African nations from 2020 to 2023.</p>
+                        <div class="publication-tags">
+                            <span class="tag">COVID-19</span>
+                            <span class="tag">Public Health</span>
+                            <span class="tag">Africa</span>
+                            <span class="tag">Healthcare Systems</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="pub-button view-button">View Full Article</a>
+                            <a href="#" class="pub-button cite-button">Cite</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-icon">📝</div>
+                    <div class="publication-details">
+                        <h3>Healthcare Access and Utilization in Rural Communities: Case Studies from Eastern Africa</h3>
+                        <div class="publication-meta">
+                            <span>📅 February 2024</span>
+                            <span>🏛️ BMC Public Health</span>
+                            <span>📊 Citations: 8</span>
+                        </div>
+                        <p class="publication-abstract">A comparative analysis of healthcare accessibility, utilization patterns, and barriers to care in rural communities across Eastern African countries, with a focus on sustainable solutions and policy implications.</p>
+                        <div class="publication-tags">
+                            <span class="tag">Rural Health</span>
+                            <span class="tag">Eastern Africa</span>
+                            <span class="tag">Healthcare Access</span>
+                            <span class="tag">Policy</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="pub-button view-button">View Full Article</a>
+                            <a href="#" class="pub-button cite-button">Cite</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-icon">📝</div>
+                    <div class="publication-details">
+                        <h3>Vaccination Hesitancy Among High-Risk Populations: Factors and Intervention Strategies</h3>
+                        <div class="publication-meta">
+                            <span>📅 December 2023</span>
+                            <span>🏛️ The Lancet Public Health</span>
+                            <span>📊 Citations: 17</span>
+                        </div>
+                        <p class="publication-abstract">This research investigates the socio-cultural, economic, and psychological factors contributing to vaccine hesitancy among vulnerable populations, presenting evidence-based strategies for improving vaccine acceptance.</p>
+                        <div class="publication-tags">
+                            <span class="tag">Vaccination</span>
+                            <span class="tag">Public Health</span>
+                            <span class="tag">Intervention</span>
+                            <span class="tag">Behavioral Science</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="pub-button view-button">View Full Article</a>
+                            <a href="#" class="pub-button cite-button">Cite</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-icon">📝</div>
+                    <div class="publication-details">
+                        <h3>Maternal Health Outcomes and Quality of Care: A Comparative Study of Urban and Rural Healthcare Facilities</h3>
+                        <div class="publication-meta">
+                            <span>📅 October 2023</span>
+                            <span>🏛️ International Journal of Women's Health</span>
+                            <span>📊 Citations: 14</span>
+                        </div>
+                        <p class="publication-abstract">This research evaluates disparities in maternal health outcomes between urban and rural healthcare facilities, analyzing quality of care metrics and proposing targeted interventions to reduce maternal mortality.</p>
+                        <div class="publication-tags">
+                            <span class="tag">Maternal Health</span>
+                            <span class="tag">Healthcare Quality</span>
+                            <span class="tag">Rural-Urban Disparities</span>
+                            <span class="tag">Maternal Mortality</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="pub-button view-button">View Full Article</a>
+                            <a href="#" class="pub-button cite-button">Cite</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-icon">📝</div>
+                    <div class="publication-details">
+                        <h3>Antimicrobial Resistance Patterns in Community-Acquired Infections: A Five-Year Surveillance Study</h3>
+                        <div class="publication-meta">
+                            <span>📅 August 2023</span>
+                            <span>🏛️ Journal of Infectious Diseases</span>
+                            <span>📊 Citations: 23</span>
+                        </div>
+                        <p class="publication-abstract">A comprehensive analysis of antimicrobial resistance trends in community-acquired infections across multiple regions, identifying risk factors and evaluating the effectiveness of stewardship programs.</p>
+                        <div class="publication-tags">
+                            <span class="tag">Antimicrobial Resistance</span>
+                            <span class="tag">Infectious Diseases</span>
+                            <span class="tag">Epidemiology</span>
+                            <span class="tag">Surveillance</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="#" class="pub-button view-button">View Full Article</a>
+                            <a href="#" class="pub-button cite-button">Cite</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-item">«</a>
+                <a href="#" class="page-item active">1</a>
+                <a href="#" class="page-item">2</a>
+                <a href="#" class="page-item">3</a>
+                <a href="#" class="page-item">4</a>
+                <a href="#" class="page-item">5</a>
+                <a href="#" class="page-item">»</a>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="content-sidebar">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h3 class="filter-title">Filter Publications</h3>
+                <div class="filter-group">
+                    <label class="filter-label">Research Area</label>
+                    <select class="filter-select">
+                        <option value="">All Areas</option>
+                        <option value="public-health">Public Health</option>
+                        <option value="infectious-diseases">Infectious Diseases</option>
+                        <option value="epidemiology">Epidemiology</option>
+                        <option value="global-health">Global Health</option>
+                        <option value="maternal-health">Maternal Health</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Year</label>
+                    <select class="filter-select">
+                        <option value="">All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Journal</label>
+                    <select class="filter-select">
+                        <option value="">All Journals</option>
+                        <option value="lancet">The Lancet</option>
+                        <option value="bmj">BMJ</option>
+                        <option value="jama">JAMA</option>
+                        <option value="nejm">NEJM</option>
+                        <option value="global-health">Journal of Global Health</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Search Keywords</label>
+                    <input type="text" class="filter-input" placeholder="Search by title, author, or keywords">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-button apply-button">Apply Filters</button>
+                    <button class="filter-button reset-button">Reset</button>
+                </div>
+            </div>
+            
+            <!-- Publication Stats -->
+            <div class="sidebar-posts">
+                <h3 class="sidebar-title">Publication Statistics</h3>
+                <div class="publication-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">53</span>
+                        <span class="stat-label">Total Publications</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">742</span>
+                        <span class="stat-label">Citations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15</span>
+                        <span class="stat-label">Publications in 2023</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Publications in 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Citation Card -->
+            <div class="citation-card">
+                <h3 class="citation-title">Most Cited Publication</h3>
+                <div class="citation-text">
+Nkuba, V., Ahmed, S., & Johnson, P. (2022). Comprehensive Analysis of Emerging Infectious Diseases in Sub-Saharan Africa: A Ten-Year Review. Nature Medicine, 28(4), 423-435.
+https://doi.org/10.1038/s41591-022-0143-x
+                </div>
+                <button class="copy-button">Copy Citation</button>
+            </div>
+            
+            <!-- Recent Posts -->
+            <div class="sidebar-posts">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <div class="post-item">
+                    <a href="#" class="post-title">New Research Findings on Tropical Diseases</a>
+                    <p class="post-date">March 15, 2024</p>
+                </div>
+                <div class="post-item">
+                    <a href="#" class="post-title">Healthcare Policy Updates 2024</a>
+                    <p class="post-date">March 10, 2024</p>
+                </div>
+                <div class="post-item">
+                    <a href="#" class="post-title">Medical Education in Developing Countries</a>
+                    <p class="post-date">March 5, 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

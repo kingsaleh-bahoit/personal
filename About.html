@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Valentin NKUBA - Medical Professional & Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a3a7e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .title h1 {
+            color: #1a3a7e;
+            font-size: 22px;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        
+        .title p {
+            color: #6c757d;
+            font-size: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #495057;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            color: #1a3a7e;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .language {
+            color: #495057;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+        
+        .main-nav {
+            background-color: #1a3a7e;
+            padding: 15px 40px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .red-divider {
+            width: 100%;
+            height: 5px;
+            background-color: #dc3545;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-header h1 {
+            color: #1a3a7e;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .about-header p {
+            color: #6c757d;
+            font-size: 18px;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .doctor-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #1a3a7e;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dc3545;
+        }
+        
+        .about-text p {
+            color: #495057;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .credentials {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .credentials h2 {
+            color: #1a3a7e;
+            margin-bottom: 20px;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .credential-item h3 {
+            color: #dc3545;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .credential-item p {
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .experience {
+            margin-bottom: 40px;
+        }
+        
+        .experience-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #dc3545;
+        }
+        
+        .experience-item h3 {
+            color: #1a3a7e;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .experience-item .position {
+            color: #dc3545;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .duration {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item p {
+            color: #495057;
+        }
+        
+        .contact-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 30px;
+            color: #1a3a7e;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item h3 {
+            color: #212529;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .contact-item p, .contact-item a {
+            color: #495057;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #dc3545;
+        }
+        /* Footer Styles */
+        .footer {
+            background-color: #1a3a7e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .copyright {
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .logo-container {
+                margin-bottom: 20px;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+               <a href="indexdr.html">
+                <span style="font-size: 20px;">
+  <svg viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2.1L1 12h3v9h6v-6h4v6h6v-9h3L12 2.1z" fill="white" stroke="white" stroke-width="0.5" />
+  </svg>
+  </a>
+</span></div>
+            <div class="title">
+                <h1>Dr. Valentin NKUBA</h1>
+                <p>MD, MPH</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            
+            <a href="about.html">
+                <span style="font-size: 30px;">⊙</span>
+                About
+            </a>
+            <span class="language">FR | EN</span>
+        </div>
+    </header>
+    
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="medicalresearch.html">Medical Research</a></li>
+            <li><a href="publichealth.html">Public Health</a></li>
+            <li><a href="publicrelations.html">Public Relations</a></li>
+            <li><a href="clinicalactivities.html">Clinical Activities</a></li> 
+            <li><a href="books-publications.html">Books & Publications</a></li>
+            <li><a href="otheractivities.html">Other Activities</a></li> 
+        </ul>
+    </nav>
+    
+    <div class="red-divider"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="about-header">
+            <h1>About Dr. Valentin NKUBA</h1>
+            <p>Medical Professional, Researcher & Expert in Healthcare Management & Disease Prevention</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/Dr.jpg" alt="Dr. Valentin NKUBA" class="doctor-image">
+            </div>
+            
+            <div class="about-text">
+                <div class="about-section">
+                    <h2 class="section-title">Professional Biography</h2>
+                    <p>Public Health Specialist ◼️ Medical Doctor ◼️ Expert in Healthcare Management & Disease Prevention Innovating Health Systems for Effective Pandemic Response<p>
+                    <p>Dr. Valentin NKUBA is a dynamic and results-driven Medical Doctor and Public Health Specialist with over 16 years of progressive global experience in public health, healthcare management, and humanitarian response. With a Master’s degree in Public Health from the National University of Rwanda, Dr. Nkuba has built a distinguished career focused on improving health outcomes, strengthening health systems, and leading effective responses to public health emergencies across diverse settings.</p>
+                    <p>Currently serving as Managing Director and Clinical Director at Baho International Hospital, Dr. Nkuba provides strategic leadership in advancing clinical excellence and operational efficiency. His role integrates high-level policy engagement, healthcare quality improvement, and capacity-building to enhance patient care and institutional performance.</p>
+                    <p>Throughout his career, Dr. Nkuba has held key leadership roles within international NGOs, significantly contributing to Rwanda’s health sector through strategic collaborations with the Ministry of Health and global stakeholders. He has been at the forefront of emergency health interventions, including the management of Marburg fever, Ebola preparedness, and the COVID-19 pandemic, employing evidence-based public health strategies to mitigate disease spread and safeguard vulnerable populations.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2 class="section-title">Accomplishments</h2>
+                    <p>Dr. Nkuba is widely recognized for his exceptional leadership, analytical acumen, and cross-cultural collaboration skills. He thrives in high-stakes environments, adeptly managing diverse teams and navigating complex health crises with professionalism, empathy, and strategic foresight.</p>
+                    <p>- Achieving measurable reductions in postoperative infections and neonatal mortality through targeted clinical improvements and system-level interventions.</p>
+                    <p>- Designing and implementing robust Monitoring and Evaluation (M&E) frameworks to optimize health program outcomes and enhance accountability.</p>
+                    <p>- Leading training and mentorship programs that empower healthcare providers and reinforce institutional capacity at local and national levels.</p>
+                    <p>Driving impactful policy advocacy and health system reforms that align with global health standards and community needs.<p>
+                    <p>- Community-based approaches to healthcare delivery</p>
+                    <p>- Medical education methodologies in resource-limited settings</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="credentials">
+            <h2>Education & Credentials</h2>
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <h3>🎓Academic Qualifications</h3>
+                    <p>Master of Public Health (MPH) National University of Rwanda – School of Public Health </p>
+                    <p> Doctor of Medicine (MD) National University of Rwanda – Faculty of Medicine</p>
+                    <p>Associate Degree in Biomedical Sciences Université de Kisangani – Faculté de Médecine</p>
+                    <p>FAssociate Degree in Veterinary Sciences Université de Lubumbashi – Faculté de Médecine Vétérinaire</p>
+                </div>
+                <div class="credential-item">
+                    <h3>Professional Memberships</h3>
+                    <p>African Academy of Sciences</p>
+                    <p>International Society for Infectious Diseases</p>
+                    <p>American Society of Tropical Medicine & Hygiene</p>
+                    <p>Royal Society of Tropical Medicine and Hygiene</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>National Institute for Biomedical Research</h3>
+                <p class="position">Head of Infectious Disease Research</p>
+                <p class="duration">2018 - Present</p>
+                <p>Leading a team of researchers focused on tropical disease surveillance, prevention, and control. Overseeing multiple research projects and collaborating with international health organizations.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>University Teaching Hospital</h3>
+                <p class="position">Consultant Physician</p>
+                <p class="duration">2014 - Present</p>
+                <p>Providing clinical care in infectious diseases department, supervising medical residents, and participating in hospital management and policy development.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>World Health Organization</h3>
+                <p class="position">Technical Consultant</p>
+                <p class="duration">2012 - 2018</p>
+                <p>Advised on disease outbreak response strategies, healthcare systems strengthening, and public health policy development for multiple countries in sub-Saharan Africa.</p>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:dr.nkuba@example.com">drvalriche78@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p>+250 788 467 828</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🏢</div>
+                    <h3>Office</h3>
+                    <p>BAHO INTERNATIONAL HOSPITAL (BIH)</p>
+                    <p>Kigali, Rwanda</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section with Copyright -->
+    <footer class="footer">
+        <div class="copyright">
+            © 2025 Copyright MD,MPH NKUBA VALENTIN - All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
